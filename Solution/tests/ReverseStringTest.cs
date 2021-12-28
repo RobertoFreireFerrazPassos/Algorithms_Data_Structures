@@ -13,5 +13,14 @@ namespace tests
             string result = ReverseString.Reverse(input);
             Assert.Equal(expectedOutput, result);
         }
+
+        [Theory]
+        [InlineData("abcd", "dcba")]
+        [InlineData("  abcd", "dcba  ")]
+        public void MustSolution2ReversesAString(string input, string expectedOutput)
+        {
+            string result = ReverseString.Reverse(input);
+            Assert.Equal(expectedOutput, result);
+        }
     }
 }

@@ -15,5 +15,16 @@
             }
             return new string(outputAsCharArray);
         }
+
+        public static string Reverse_solution2(string input)
+        {
+            string output = "";
+
+            foreach (char character in input)
+            {
+                output = character + output;
+            }
+            return output;
+        }
     }
 }

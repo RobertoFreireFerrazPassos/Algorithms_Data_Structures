@@ -1,36 +1,49 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using Algorithms_Data_Structures;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using System;
-using System.Security.Cryptography;
+
+/*
+    |            Method |       Mean |     Error |    StdDev |
+    |------------------ |-----------:|----------:|----------:|
+    |           Reverse |   212.4 ns |   9.84 ns |  29.00 ns |
+    | Reverse_solution2 | 3,546.5 ns | 114.11 ns | 332.85 ns |
+*/
 
 namespace Benchmark
 {
-    public class Md5VsSha256
+    public class ReverseStringBenchmark
     {
-        private const int N = 10000;
-        private readonly byte[] data;
+        private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        private string input;
+        private int inputLength = 100;
 
-        private readonly SHA256 sha256 = SHA256.Create();
-        private readonly MD5 md5 = MD5.Create();
-
-        public Md5VsSha256()
+        public ReverseStringBenchmark() 
         {
-            data = new byte[N];
-            new Random(42).NextBytes(data);
+            
+            var stringChars = new char[inputLength];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            input = new String(stringChars);
         }
 
         [Benchmark]
-        public byte[] Sha256() => sha256.ComputeHash(data);
+        public string Reverse() => ReverseString.Reverse(input);
 
         [Benchmark]
-        public byte[] Md5() => md5.ComputeHash(data);
+        public string Reverse_solution2() => ReverseString.Reverse_solution2(input);
     }
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<Md5VsSha256>();
+            var summary = BenchmarkRunner.Run<ReverseStringBenchmark>();
         }
     }
 }
