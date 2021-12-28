@@ -2,6 +2,12 @@
 
 namespace Algorithms_Data_Structures
 {
+    /*
+       |                  Method |     Mean |    Error |   StdDev |
+       |------------------------ |---------:|---------:|---------:|
+       |           IsAPalindrome | 41.06 ns | 0.645 ns | 0.539 ns |
+       | IsAPalindrome_solution2 | 18.64 ns | 0.410 ns | 1.051 ns |
+    */
     public static class Palindrome
     {
         public static bool IsAPalindrome(string input)
@@ -9,6 +15,7 @@ namespace Algorithms_Data_Structures
             string result = ReverseString.Reverse(input);
             return String.Equals(result, input);
         }
+
         public static bool IsAPalindrome_solution2(string input)
         {
             char[] inputAsCharArray = input.ToCharArray();
