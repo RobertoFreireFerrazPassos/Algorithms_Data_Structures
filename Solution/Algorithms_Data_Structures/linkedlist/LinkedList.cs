@@ -21,20 +21,12 @@ namespace Algorithms_Data_Structures
         public int Size()
         {
             int size = 0;
-            if (Head != null)
-            {
-                size++;
-                size = CountNext(Head, size);
-            } 
-            return size;
-        }
+            LinkedNode currentNode = Head;
 
-        private int CountNext(LinkedNode node, int size)
-        {
-            if (node.Next != null)
+            while (currentNode != null)
             {
                 size++;
-                return CountNext(node.Next, size);
+                currentNode = currentNode.Next;
             } 
             return size;
         }
