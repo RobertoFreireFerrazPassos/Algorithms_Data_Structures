@@ -5,7 +5,7 @@
         public object Data;
         public LinkedNode Next;
 
-        public LinkedNode(object data, LinkedNode next)
+        public LinkedNode(object data, LinkedNode next = null)
         {
             Data = data;
             Next = next;

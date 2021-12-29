@@ -2,7 +2,7 @@
 {
     public class LinkedList
     {
-        public LinkedNode Head { get; private set; }
+        private LinkedNode Head;
 
         public LinkedList() 
         {
@@ -11,7 +11,6 @@
 
         public void InsertFirst(object data)
         {
-            var headCopy = Head;
             Head = new LinkedNode(data, Head);
         }
 
@@ -53,6 +52,55 @@
         public void RemoveFirst()
         {
             Head = Head != null ? Head.Next : null;
+        }
+
+        public void RemoveLast()
+        {
+            if (Head == null) return;
+
+            if (Head.Next == null)
+            {
+                Head = null;
+                return;
+            }
+
+            var previousNode = Head;
+            var currentNode = Head.Next;
+
+            while (currentNode.Next != null)
+            {
+                previousNode = currentNode;
+                currentNode = currentNode.Next;
+            }
+            previousNode.Next = null;
+        }
+
+        public void InsertLast(object data)
+        {
+            var lastNode = GetLast();
+            var newNode = new LinkedNode(data);
+            if (lastNode != null)
+            {
+                lastNode.Next = newNode;
+            }
+            else 
+            {
+                Head = newNode;
+            }
+        }
+
+        public LinkedNode GetAt(int index)
+        {
+            int counter = 0;
+            LinkedNode currentNode = Head;
+
+            while (currentNode != null)
+            {
+                if (index == counter) return currentNode;
+                counter++;
+                currentNode = currentNode.Next;
+            }
+            return null;
         }
     }
 }
