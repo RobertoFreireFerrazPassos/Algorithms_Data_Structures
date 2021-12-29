@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Algorithms_Data_Structures
+﻿namespace Algorithms_Data_Structures
 {
     public class LinkedList
     {
@@ -29,6 +26,33 @@ namespace Algorithms_Data_Structures
                 currentNode = currentNode.Next;
             } 
             return size;
+        }
+
+        public LinkedNode GetFirst()
+        {
+            return Head;
+        }
+
+        public LinkedNode GetLast()
+        {
+            LinkedNode currentNode = Head;
+
+            while (currentNode != null)
+            {
+                if (currentNode.Next == null) return currentNode;
+                currentNode = currentNode.Next;
+            }
+            return currentNode;
+        }
+
+        public void Clear()
+        {
+            Head = null;
+        }
+
+        public void RemoveFirst()
+        {
+            Head = Head != null ? Head.Next : null;
         }
     }
 }
