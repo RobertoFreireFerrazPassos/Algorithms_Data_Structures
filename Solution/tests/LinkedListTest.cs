@@ -15,5 +15,17 @@ namespace tests
             Assert.Equal(2,list.Head.Data);
             Assert.Equal(1, list.Head.Next.Data);
         }
+
+        [Fact]
+        public void MustReturnSizeOfList()
+        {
+            var list = new LinkedList();
+            Assert.Equal(0, list.Size());
+            list.InsertFirst(1);
+            list.InsertFirst(1);
+            list.InsertFirst(1);
+            list.InsertFirst(1);
+            Assert.Equal(4, list.Size());
+        }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Algorithms_Data_Structures
+﻿using System;
+using System.Collections.Generic;
+
+namespace Algorithms_Data_Structures
 {
     public class LinkedList
     {
@@ -14,18 +17,26 @@
             var headCopy = Head;
             Head = new LinkedNode(data, Head);
         }
-            
-    }
 
-    public class LinkedNode
-    {
-        public object Data;
-        public LinkedNode Next;
-
-        public LinkedNode(object data, LinkedNode next)
+        public int Size()
         {
-            Data = data;
-            Next = next;
+            int size = 0;
+            if (Head != null)
+            {
+                size++;
+                size = CountNext(Head, size);
+            } 
+            return size;
+        }
+
+        private int CountNext(LinkedNode node, int size)
+        {
+            if (node.Next != null)
+            {
+                size++;
+                return CountNext(node.Next, size);
+            } 
+            return size;
         }
     }
 }

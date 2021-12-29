@@ -17,3 +17,5 @@ Algorithms + Data Structures in C#
 
 ## Data Structures:
 
+* LinkedList
+
