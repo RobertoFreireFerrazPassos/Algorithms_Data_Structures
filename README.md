@@ -19,3 +19,7 @@ Algorithms + Data Structures in C#
 
 * LinkedList
 
+* Queue
+
+* Tree
+
