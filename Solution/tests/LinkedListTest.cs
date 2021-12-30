@@ -134,7 +134,10 @@ namespace tests
             list.InsertLast('c');
             list.InsertLast('d');
             Assert.Equal('a', list.GetAt(0)?.Data);
+            Assert.Equal('b', list.GetAt(1)?.Data);
+            Assert.Equal('c', list.GetAt(2)?.Data);
             Assert.Equal('d', list.GetAt(3)?.Data);
+            Assert.Equal(4, list.Size());
             Assert.Null(list.GetAt(4)?.Data);
         }
 
@@ -153,6 +156,57 @@ namespace tests
             Assert.Equal("112", list.GetAt(0)?.Data);
             Assert.Equal("212", list.GetAt(1)?.Data);
             Assert.Equal("b12", list.GetAt(2)?.Data);
+        }
+
+        [Fact]
+        public void MustRemoveAt()
+        {
+            var list = new LinkedList();
+            list.InsertLast(1);
+            list.InsertLast(2);
+            list.InsertLast(3);
+            list.InsertLast(4);
+            list.RemoveAt(1);
+            Assert.Equal(1, list.GetAt(0)?.Data);
+            Assert.Equal(3, list.GetAt(1)?.Data);
+            Assert.Equal(4, list.GetAt(2)?.Data);
+            Assert.Equal(3, list.Size());
+            list.RemoveAt(0);
+            Assert.Equal(3, list.GetAt(0)?.Data);
+            Assert.Equal(4, list.GetAt(1)?.Data);
+            Assert.Equal(2, list.Size());
+            list.RemoveAt(1);
+            Assert.Equal(3, list.GetAt(0)?.Data);
+            Assert.Null(list.GetAt(1)?.Data);
+            Assert.Equal(1, list.Size());
+            list.RemoveAt(0);
+            Assert.Null(list.GetAt(0)?.Data);
+            Assert.Equal(0, list.Size());
+        }
+
+        [Fact]
+        public void MustInsertAt()
+        {
+            var list = new LinkedList();
+            list.InsertAt('a',0);
+            Assert.Equal('a', list.GetAt(0)?.Data);
+            Assert.Null(list.GetAt(1)?.Data);
+            Assert.Equal(1, list.Size());
+            list.InsertAt('b', 0);
+            Assert.Equal('b', list.GetAt(0)?.Data);
+            Assert.Equal('a', list.GetAt(1)?.Data);
+            Assert.Equal(2, list.Size());
+            list.InsertAt('c', 2);
+            Assert.Equal('b', list.GetAt(0)?.Data);
+            Assert.Equal('a', list.GetAt(1)?.Data);
+            Assert.Equal('c', list.GetAt(2)?.Data);
+            Assert.Equal(3, list.Size());
+            list.InsertAt('d', 2);
+            Assert.Equal('b', list.GetAt(0)?.Data);
+            Assert.Equal('a', list.GetAt(1)?.Data);
+            Assert.Equal('d', list.GetAt(2)?.Data);
+            Assert.Equal('c', list.GetAt(3)?.Data);
+            Assert.Equal(4, list.Size());
         }
     }
 }

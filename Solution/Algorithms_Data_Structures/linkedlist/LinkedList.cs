@@ -102,5 +102,60 @@
             }
             return null;
         }
+
+        public void RemoveAt(int index)
+        {
+            if (index == 0)
+            {
+                RemoveFirst();
+                return;
+            }
+
+            int size = Size();
+
+            if (index >= size) return;
+
+            if (index == size -1)
+            {
+                RemoveLast();
+                return;
+            }
+
+            LinkedNode previousNode = GetAt(index - 1);
+            LinkedNode node = GetAt(index);
+
+            if (node != null)
+            {
+                var nextNode = node.Next;
+                previousNode.Next = nextNode;
+            }
+        }
+
+        public void InsertAt(object data, int index)
+        {
+            if (index == 0) {
+                InsertFirst(data);
+                return;
+            }
+
+            int size = Size();
+
+            if (index > size) return;
+
+            if (index == size) 
+            {
+                InsertLast(data);
+                return;
+            }
+
+            LinkedNode previousNode = GetAt(index -1);
+            LinkedNode node = GetAt(index);
+
+            if (node != null) 
+            {
+                var nextNode = node;
+                previousNode.Next = new LinkedNode(data, nextNode);
+            }
+        }
     }
 }
