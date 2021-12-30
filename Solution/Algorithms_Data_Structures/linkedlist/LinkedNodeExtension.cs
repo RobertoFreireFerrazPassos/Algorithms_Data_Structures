@@ -4,17 +4,16 @@ namespace Algorithms_Data_Structures
 {
     public static class LinkedNodeExtension
     {
-        public static void forEach(this LinkedList linkedList, Func<LinkedNode, object> lambda)
+        public static void Map(this LinkedList linkedList, Func<LinkedNode, LinkedNode> lambda)
         {
             LinkedNode currentNode = linkedList.GetFirst();
 
             while (currentNode != null)
             {
-                currentNode.Data = lambda(currentNode);
+                currentNode = lambda(currentNode);
                 if (currentNode.Next == null) return;
                 currentNode = currentNode.Next;
             }
-            return;
         }
     }
 }

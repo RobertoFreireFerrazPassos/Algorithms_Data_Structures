@@ -145,7 +145,11 @@ namespace tests
             list.InsertLast(1);
             list.InsertLast(2);
             list.InsertLast('b');
-            list.forEach((node) => node.Data + "12");
+            list.Map((node) =>
+            {
+                node.Data = node.Data + "12";
+                return node;
+            });
             Assert.Equal("112", list.GetAt(0)?.Data);
             Assert.Equal("212", list.GetAt(1)?.Data);
             Assert.Equal("b12", list.GetAt(2)?.Data);
