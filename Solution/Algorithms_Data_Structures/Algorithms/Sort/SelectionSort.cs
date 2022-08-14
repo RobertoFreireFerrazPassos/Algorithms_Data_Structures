@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace Algorithms_Data_Structures.DataStructures.Selection_Sort_Algorithm
+namespace Algorithms_Data_Structures.Algorithms.Selection_Sort_Algorithm
 {
-    public static class SortAlgorithms
+    public static class SelectionSort
     {
-        public static int[] SelectionSort(int[] input)
+        public static int[] Sort(int[] input)
         {
             for (var currentPosition = 0; currentPosition < input.Length - 1; currentPosition++)
             {
@@ -26,7 +26,7 @@ namespace Algorithms_Data_Structures.DataStructures.Selection_Sort_Algorithm
             return input;
         }
 
-        public static int[] SelectionSort_Solution2(int[] input)
+        public static int[] Sort_Solution2(int[] input)
         {
             for (var currentPosition = 0; currentPosition < input.Length - 1; currentPosition++)
             {
@@ -49,7 +49,7 @@ namespace Algorithms_Data_Structures.DataStructures.Selection_Sort_Algorithm
             return input;
         }
 
-        public static int[] SelectionSort_Solution3(int[] input)
+        public static int[] Sort_Solution3(int[] input)
         {
             var inputAsList = new List<int>(input);
             var inputLength = input.Length;

@@ -1,4 +1,4 @@
-﻿using Algorithms_Data_Structures.DataStructures.Selection_Sort_Algorithm;
+﻿using Algorithms_Data_Structures.Algorithms.Selection_Sort_Algorithm;
 using tests.Extension;
 using Xunit;
 
@@ -18,7 +18,7 @@ namespace tests
         [InlineData("3, 0, 3", "0, 3, 3")]
         public void Sort(string array, string expectedOutput)
         {
-            var result = SortAlgorithms.SelectionSort(array.CreateIntArray());
+            var result = SelectionSort.Sort(array.CreateIntArray());
 
             Assert.Equal(expectedOutput, result.CreateString());
         }
@@ -35,7 +35,7 @@ namespace tests
         [InlineData("3, 0, 3", "0, 3, 3")]
         public void Sort_Solution2(string array, string expectedOutput)
         {
-            var result = SortAlgorithms.SelectionSort_Solution2(array.CreateIntArray());
+            var result = SelectionSort.Sort_Solution2(array.CreateIntArray());
 
             Assert.Equal(expectedOutput, result.CreateString());
         }
@@ -52,7 +52,7 @@ namespace tests
         [InlineData("3, 0, 3", "0, 3, 3")]
         public void Sort_Solution3(string array, string expectedOutput)
         {
-            var result = SortAlgorithms.SelectionSort_Solution3(array.CreateIntArray());
+            var result = SelectionSort.Sort_Solution3(array.CreateIntArray());
 
             Assert.Equal(expectedOutput, result.CreateString());
         }

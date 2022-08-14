@@ -17,6 +17,8 @@ Algorithms + Data Structures in C#
 
 * Selection Sort Algorithm
 
+* QuickSort
+
 ## Data Structures:
 
 * LinkedList

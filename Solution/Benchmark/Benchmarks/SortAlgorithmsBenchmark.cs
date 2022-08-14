@@ -1,4 +1,4 @@
-﻿using Algorithms_Data_Structures.DataStructures.Selection_Sort_Algorithm;
+﻿using Algorithms_Data_Structures.Algorithms.Selection_Sort_Algorithm;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmark.Benchmarks
@@ -16,12 +16,12 @@ namespace Benchmark.Benchmarks
         private int[] input = new int[] { 64, 25, 25, 12, 22, 11, 25 };
 
         [Benchmark]
-        public int[] Sort() => SortAlgorithms.SelectionSort(input);
+        public int[] Sort() => SelectionSort.Sort(input);
 
         [Benchmark]
-        public int[] Sort_Solution2() => SortAlgorithms.SelectionSort_Solution2(input);
+        public int[] Sort_Solution2() => SelectionSort.Sort_Solution2(input);
 
         [Benchmark]
-        public int[] Sort_Solution3() => SortAlgorithms.SelectionSort_Solution3(input);
+        public int[] Sort_Solution3() => SelectionSort.Sort_Solution3(input);
     }
 }
