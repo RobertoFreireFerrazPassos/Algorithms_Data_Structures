@@ -1,12 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms_Data_Structures.Algorithms.Sort
+﻿namespace Algorithms_Data_Structures.Algorithms.Sort
 {
-    public class QuickSort
+    public static class QuickSort
     {
+        public static int[] Sort(int[] input)
+        {
+            return input;
+
+            int[] QuickSort(int[] input)
+            {
+                var pivot = input[0];
+
+                for (int i = 0; i < input.Length; i ++)
+                {
+                    if (input[i] <= pivot)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+                return input;
+            }
+        }
     }
 }

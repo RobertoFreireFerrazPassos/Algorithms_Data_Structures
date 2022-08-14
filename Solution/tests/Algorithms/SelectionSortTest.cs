@@ -4,7 +4,7 @@ using Xunit;
 
 namespace tests
 {
-    public class SelectionSortAlgorithmTest
+    public class SelectionSortTest
     {
         [Theory]
         [InlineData("64, 25, 25, 12, 22, 11, 25", "11, 12, 22, 25, 25, 25, 64")]

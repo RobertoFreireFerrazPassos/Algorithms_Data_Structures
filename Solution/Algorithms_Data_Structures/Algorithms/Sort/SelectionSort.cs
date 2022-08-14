@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Algorithms_Data_Structures.Algorithms.Selection_Sort_Algorithm
+namespace Algorithms_Data_Structures.Algorithms.Sort
 {
     public static class SelectionSort
     {
