@@ -1,11 +1,5 @@
 ﻿namespace Algorithms_Data_Structures
 {
-    /*
-        |            Method |       Mean |     Error |    StdDev |
-        |------------------ |-----------:|----------:|----------:|
-        |           Reverse |   212.4 ns |   9.84 ns |  29.00 ns |
-        | Reverse_solution2 | 3,546.5 ns | 114.11 ns | 332.85 ns |
-    */
     public static class ReverseString
     {
         public static string Reverse(string input) {

@@ -1,27 +1,24 @@
 ﻿using Algorithms_Data_Structures;
+using Benchmark.Util;
 using BenchmarkDotNet.Attributes;
-using System;
 
 namespace Benchmark.Benchmarks
 {
+    /*
+       |                  Method |     Mean |    Error |   StdDev |
+       |------------------------ |---------:|---------:|---------:|
+       |           IsAPalindrome | 41.06 ns | 0.645 ns | 0.539 ns |
+       | IsAPalindrome_solution2 | 18.64 ns | 0.410 ns | 1.051 ns |
+    */
     public class PalindromeBenchmark
     {
         private const string chars = "AB";
         private string input;
-        private int inputLength = 4;
+        private readonly int inputLength = 4;
 
         public PalindromeBenchmark()
         {
-
-            var stringChars = new char[inputLength];
-            var random = new Random();
-
-            for (int i = 0; i < stringChars.Length; i++)
-            {
-                stringChars[i] = chars[random.Next(chars.Length)];
-            }
-
-            input = new String(stringChars);
+            input = StringUtil.CreateRandomStringFromChar(chars, inputLength);
         }
 
         [Benchmark]

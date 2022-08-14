@@ -15,6 +15,8 @@ Algorithms + Data Structures in C#
 
 * Palindrome
 
+* Selection Sort Algorithm
+
 ## Data Structures:
 
 * LinkedList
@@ -23,3 +25,7 @@ Algorithms + Data Structures in C#
 
 * Tree
 
+
+## Reference:
+
+https://www.geeksforgeeks.org/sorting-algorithms/?ref=lbp
