@@ -6,10 +6,29 @@ namespace Algorithms_Data_Structures.DataStructures.Selection_Sort_Algorithm
     {
         public static int[] SelectionSort(int[] input)
         {
-            var inputLength = input.Length;
-            var currentPosition = 0;
+            for (var currentPosition = 0; currentPosition < input.Length - 1; currentPosition++)
+            {
+                var currentMinValueIndex = currentPosition;
 
-            while (currentPosition < inputLength - 1)
+                for (int i = currentPosition + 1; i < input.Length; i++)
+                {
+                    if (input[i] < input[currentMinValueIndex])
+                    {
+                        currentMinValueIndex = i;
+                    }
+                }
+
+                var currentMinValue = input[currentMinValueIndex];
+                input[currentMinValueIndex] = input[currentPosition];
+                input[currentPosition] = currentMinValue;
+            }
+
+            return input;
+        }
+
+        public static int[] SelectionSort_Solution2(int[] input)
+        {
+            for (var currentPosition = 0; currentPosition < input.Length - 1; currentPosition++)
             {
                 var currentIndex = currentPosition;
                 var currentMinValue = input[currentIndex];
@@ -25,14 +44,12 @@ namespace Algorithms_Data_Structures.DataStructures.Selection_Sort_Algorithm
 
                 input[currentIndex] = input[currentPosition];
                 input[currentPosition] = currentMinValue;
-
-                currentPosition++;
             }
 
             return input;
         }
 
-        public static int[] SelectionSort_Solution2(int[] input)
+        public static int[] SelectionSort_Solution3(int[] input)
         {
             var inputAsList = new List<int>(input);
             var inputLength = input.Length;

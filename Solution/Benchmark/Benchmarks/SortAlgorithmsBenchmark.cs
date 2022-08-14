@@ -4,10 +4,11 @@ using BenchmarkDotNet.Attributes;
 namespace Benchmark.Benchmarks
 {
     /*
-        |         Method |      Mean |    Error |   StdDev |
-        |--------------- |----------:|---------:|---------:|
-        |           Sort |  41.20 ns | 0.947 ns | 1.197 ns |
-        | Sort_Solution2 | 215.91 ns | 4.330 ns | 6.868 ns |
+        |         Method |      Mean |    Error |    StdDev |
+        |--------------- |----------:|---------:|----------:|
+        |           Sort |  38.70 ns | 0.897 ns |  0.795 ns |
+        | Sort_Solution2 |  37.86 ns | 0.886 ns |  0.948 ns |
+        | Sort_Solution3 | 215.55 ns | 4.344 ns | 11.443 ns |
     */
 
     public class SortAlgorithmsBenchmark
@@ -19,5 +20,8 @@ namespace Benchmark.Benchmarks
 
         [Benchmark]
         public int[] Sort_Solution2() => SortAlgorithms.SelectionSort_Solution2(input);
+
+        [Benchmark]
+        public int[] Sort_Solution3() => SortAlgorithms.SelectionSort_Solution3(input);
     }
 }
