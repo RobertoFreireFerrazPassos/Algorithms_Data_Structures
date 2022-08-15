@@ -2,7 +2,7 @@
 using Xunit;
 using Xunit.Abstractions;
 
-namespace tests
+namespace tests.DataStructures
 {
     public class QueueTest
     {

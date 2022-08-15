@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace tests
+namespace tests.DataStructures
 {
     public class TreeNodeTest
     {

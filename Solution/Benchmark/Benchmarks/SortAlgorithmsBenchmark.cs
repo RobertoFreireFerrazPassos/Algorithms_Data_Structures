@@ -4,6 +4,12 @@ using BenchmarkDotNet.Attributes;
 namespace Benchmark.Benchmarks
 {
     /*
+        |                     Method |          Mean |        Error |        StdDev |
+        |--------------------------- |--------------:|-------------:|--------------:|
+        |  SelectionSort_SimpleInput |      46.10 ns |     1.035 ns |      1.192 ns |
+        |      QuickSort_SimpleInput |     221.78 ns |     4.518 ns |      5.378 ns |
+        | SelectionSort_ComplexInput | 591,129.23 ns | 9,665.411 ns | 11,130.701 ns |
+        |     QuickSort_ComplexInput |  52,971.02 ns |   919.877 ns |  1,536.908 ns |
     */
 
     public class SortAlgorithmsBenchmark

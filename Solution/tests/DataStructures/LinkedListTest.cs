@@ -1,7 +1,7 @@
 ﻿using Algorithms_Data_Structures;
 using Xunit;
 
-namespace tests
+namespace tests.DataStructures
 {
     public class LinkedListTest
     {
