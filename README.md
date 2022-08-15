@@ -31,3 +31,5 @@ Algorithms + Data Structures in C#
 ## Reference:
 
 https://www.geeksforgeeks.org/sorting-algorithms/?ref=lbp
+
+https://big-o.io/algorithms/comparison/quicksort/
