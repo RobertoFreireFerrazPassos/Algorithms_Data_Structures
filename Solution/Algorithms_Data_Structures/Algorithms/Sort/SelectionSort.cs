@@ -2,8 +2,36 @@
 
 namespace Algorithms_Data_Structures.Algorithms.Sort
 {
+    public class Item
+    {
+        public int Index { get; set; }
+        public int Value { get; set; }
+    }
+
     public static class SelectionSort
     {
+        public static Item[] Sort(Item[] input)
+        {
+            for (var currentPosition = 0; currentPosition < input.Length - 1; currentPosition++)
+            {
+                var currentMinValueIndex = currentPosition;
+
+                for (int i = currentPosition + 1; i < input.Length; i++)
+                {
+                    if (input[i].Value < input[currentMinValueIndex].Value)
+                    {
+                        currentMinValueIndex = i;
+                    }
+                }
+
+                var currentMinValue = input[currentMinValueIndex];
+                input[currentMinValueIndex] = input[currentPosition];
+                input[currentPosition] = currentMinValue;
+            }
+
+            return input;
+        }
+
         public static int[] Sort(int[] input)
         {
             for (var currentPosition = 0; currentPosition < input.Length - 1; currentPosition++)

@@ -1,11 +1,42 @@
-﻿using Algorithms_Data_Structures.Algorithms.Selection_Sort_Algorithm;
+﻿using Algorithms_Data_Structures.Algorithms.Sort;
+using FluentAssertions;
 using tests.Extension;
 using Xunit;
 
-namespace tests
+namespace tests.Algorithms
 {
     public class SelectionSortTest
     {
+        [Fact]
+        public void SortItems()
+        {
+            var items = new Item[]
+            {
+                new Item { Value = 64, Index = 4},
+                new Item { Value = 25, Index = 3},
+                new Item { Value = 25, Index = 2},
+                new Item { Value = 12, Index = 5},
+                new Item { Value = 22, Index = 1},
+                new Item { Value = 11, Index = 6},
+                new Item { Value = 25, Index = 0}
+            };
+
+            var expectedResult = new Item[]
+            {
+                new Item { Value = 11, Index = 6},
+                new Item { Value = 12, Index = 5},
+                new Item { Value = 22, Index = 1},
+                new Item { Value = 25, Index = 3},
+                new Item { Value = 25, Index = 2},
+                new Item { Value = 25, Index = 0},
+                new Item { Value = 64, Index = 4}
+            };
+
+            var result = SelectionSort.Sort(items);
+
+            result.Should().BeEquivalentTo(expectedResult);
+        }
+
         [Theory]
         [InlineData("64, 25, 25, 12, 22, 11, 25", "11, 12, 22, 25, 25, 25, 64")]
         [InlineData("64, 25, 12, 22, 11, 25", "11, 12, 22, 25, 25, 64")]
