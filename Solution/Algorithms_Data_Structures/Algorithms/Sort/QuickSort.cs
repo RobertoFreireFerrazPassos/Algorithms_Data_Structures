@@ -4,30 +4,32 @@
     {
         public static int[] Sort(int[] input)
         {
-            if (input.Length <= 1)
-            {
-                return input;
-            } 
-            else if (input.Length == 2)
-            {
-                if (input[0] > input[1])
-                {
-                    SwapItems(input, 0, 1);
-                }
-
-                return input;
-            }
-
-            QuickSort(input);            
+            QuickSort(input, 0, input.Length - 1);            
 
             return input;
 
-            void QuickSort(int[] input)
+            void QuickSort(int[] input, int minIndex, int maxIndex)
             {
-                var pivotIndex = SetPivot(input);
+                var inputLength = maxIndex - minIndex + 1;
 
-                var leftCursor = 0;
-                var rightCursor = input.Length - 1;
+                if (inputLength <= 1)
+                {
+                    return;
+                }
+                else if (inputLength == 2)
+                {
+                    if (input[minIndex] > input[maxIndex])
+                    {
+                        SwapItems(input, minIndex, maxIndex);
+                    }
+
+                    return;
+                }
+
+                var pivotIndex = SetPivot(input, minIndex, maxIndex, inputLength);
+
+                var leftCursor = minIndex;
+                var rightCursor = maxIndex;
                 var done = false;
 
                 while (!done)
@@ -48,28 +50,29 @@
                         rightCursor--;
                     }
 
-                    if (!movedCursor)
-                    {
-                        if (leftCursor + 1 == pivotIndex)
-                        {
-                            pivotIndex = rightCursor - 1;
-                        }
-
-                        if (rightCursor - 1 == pivotIndex)
-                        {
-                            pivotIndex = leftCursor + 1;
-                        }
-
-                        SwapItems(input, leftCursor + 1, rightCursor - 1);
-                    }
-
                     if (leftCursor + 1 == pivotIndex &&
                         rightCursor - 1 == pivotIndex)
 
                     {
                         done = true;
                     }
+
+                    if (!movedCursor)
+                    {
+                        if (leftCursor + 1 == pivotIndex)
+                        {
+                            pivotIndex = rightCursor - 1;
+                        } else if (rightCursor - 1 == pivotIndex)
+                        {
+                            pivotIndex = leftCursor + 1;
+                        }
+
+                        SwapItems(input, leftCursor + 1, rightCursor - 1);
+                    }
                 }
+
+                QuickSort(input, minIndex, pivotIndex - 1);
+                QuickSort(input, pivotIndex + 1, maxIndex);
             }
 
             int GetMiddleValue(int number)
@@ -77,23 +80,22 @@
                 return number % 2 == 0 ? number/2 : (number + 1)/2;
             }
 
-            int SetPivot(int[] input)
+            int SetPivot(int[] input, int minIndex, int maxIndex, int inputLength)
             {
-                var inputLength = input.Length;
-                var middleIndex = GetMiddleValue(inputLength) - 1;
+                var middleIndex = GetMiddleValue(inputLength) - 1 + minIndex;
 
                 var items = new Item[]
                 {
-                    new Item { Value = input[0], Index = 0},
+                    new Item { Value = input[minIndex], Index = minIndex},
                     new Item { Value = input[middleIndex], Index = middleIndex},
-                    new Item { Value = input[inputLength - 1], Index = inputLength - 1}
+                    new Item { Value = input[maxIndex], Index = maxIndex}
                 };
 
                 var sortedItems = SelectionSort.Sort(items);
 
-                input[0] = sortedItems[0].Value;
+                input[minIndex] = sortedItems[0].Value;
                 input[middleIndex] = sortedItems[1].Value;
-                input[inputLength - 1] = sortedItems[2].Value;
+                input[maxIndex] = sortedItems[2].Value;
 
                 return middleIndex;
             }
