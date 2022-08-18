@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Algorithms_Data_Structures
 {
@@ -16,6 +17,25 @@ namespace Algorithms_Data_Structures
             var list = new List<TreeNode>();
             list.Add(Root);            
             return AddChildrenToList(Root, list);
+        }
+
+        public bool Remove(Guid identifier)
+        {
+            return Remove(Root, identifier);
+
+            bool Remove(TreeNode node, Guid identifier)
+            {
+                if (node.Remove(identifier)) return true;
+
+                if (node.Childrens.Count == 0) return false;
+
+                foreach (var child in node.Childrens)
+                {
+                    if (Remove(child, identifier)) return true;
+                }
+
+                return false;
+            }
         }
 
         private List<TreeNode> AddChildrenToList(TreeNode node, List<TreeNode> result) 
