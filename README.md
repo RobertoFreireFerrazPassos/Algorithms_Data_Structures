@@ -15,9 +15,11 @@ Algorithms + Data Structures in C#
 
 * Palindrome
 
-* Selection Sort Algorithm
+### Sort Algorithms:
 
-* QuickSort
+* Selection Sort
+
+* Quick Sort
 
 ## Data Structures:
 

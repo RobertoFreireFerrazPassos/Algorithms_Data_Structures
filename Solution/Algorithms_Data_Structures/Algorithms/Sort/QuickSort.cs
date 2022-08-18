@@ -1,4 +1,6 @@
-﻿namespace Algorithms_Data_Structures.Algorithms.Sort
+﻿using Algorithms_Data_Structures.Extensions;
+
+namespace Algorithms_Data_Structures.Algorithms.Sort
 {
     public static class QuickSort
     {
@@ -20,7 +22,7 @@
                 {
                     if (input[minIndex] > input[maxIndex])
                     {
-                        SwapItems(input, minIndex, maxIndex);
+                        input.SwapItems(minIndex, maxIndex);
                     }
 
                     return;
@@ -67,7 +69,7 @@
                             pivotIndex = leftCursor + 1;
                         }
 
-                        SwapItems(input, leftCursor + 1, rightCursor - 1);
+                        input.SwapItems(leftCursor + 1, rightCursor - 1);
                     }
                 }
 
@@ -98,14 +100,6 @@
                 input[maxIndex] = sortedItems[2].Value;
 
                 return middleIndex;
-            }
-
-            void SwapItems(int[] input, int index1, int index2)
-            {
-                var copyOfValueFromIndex1 = input[index1];
-
-                input[index1] = input[index2];
-                input[index2] = copyOfValueFromIndex1;
             }
         }
     }
