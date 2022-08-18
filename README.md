@@ -21,6 +21,8 @@ Algorithms + Data Structures in C#
 
 * Quick Sort
 
+* Bubble Sort
+
 ## Data Structures:
 
 * LinkedList
