@@ -25,6 +25,8 @@ Algorithms + Data Structures in C#
 
 * Insert Sort
 
+* Sort by frequency
+
 ## Data Structures:
 
 * LinkedList
