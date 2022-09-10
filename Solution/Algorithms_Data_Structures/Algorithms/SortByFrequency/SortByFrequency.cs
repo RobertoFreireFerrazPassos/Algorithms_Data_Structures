@@ -9,13 +9,11 @@ namespace Algorithms_Data_Structures.Algorithms.SortByFrequency
     {
         public class ItemFrequency
         {
-            public int Value { get; set; }
             public int Frequency { get; set; }
             public int Index { get; set; }
 
-            public ItemFrequency(int value, int frequency, int index)
+            public ItemFrequency(int frequency, int index)
             {
-                Value = value;
                 Frequency = frequency;
                 Index = index;
             }
@@ -45,7 +43,7 @@ namespace Algorithms_Data_Structures.Algorithms.SortByFrequency
 
             // Create new array
             //8, 8, 8, 2, 2, 5, 5, 6
-            return CreateResult(listFrequency, lentgh);
+            return CreateResult(listFrequency, copy, lentgh);
 
             List<ItemFrequency> CreateListFrequency(int[] sortedInput, int[] copy, int lentgh)
             {
@@ -57,7 +55,7 @@ namespace Algorithms_Data_Structures.Algorithms.SortByFrequency
                 {
                     if (value != sortedInput[i])
                     {
-                        listFrequency.Add(new ItemFrequency(value, frequency, copy.GetIndexValue(value)));
+                        listFrequency.Add(new ItemFrequency(frequency, copy.GetIndexValue(value)));
                         value = sortedInput[i];
                         frequency = 1;
                     }
@@ -66,12 +64,12 @@ namespace Algorithms_Data_Structures.Algorithms.SortByFrequency
                         frequency++;
                     }
                 }
-                listFrequency.Add(new ItemFrequency(value, frequency, copy.GetIndexValue(value)));
+                listFrequency.Add(new ItemFrequency(frequency, copy.GetIndexValue(value)));
 
                 return listFrequency;
             }
 
-            int[] CreateResult(List<ItemFrequency> listFrequency, int lentgh)
+            int[] CreateResult(List<ItemFrequency> listFrequency, int[] copy, int lentgh)
             {
                 var result = new int[lentgh];
                 var resultIndex = 0;
@@ -80,7 +78,7 @@ namespace Algorithms_Data_Structures.Algorithms.SortByFrequency
                 {
                     for (int i = 0; i < itemFrequency.Frequency; i++)
                     {
-                        result[resultIndex] = itemFrequency.Value;
+                        result[resultIndex] = copy[itemFrequency.Index];
                         resultIndex++;
                     }
                 }
