@@ -23,6 +23,8 @@ Algorithms + Data Structures in C#
 
 * Bubble Sort
 
+* Insert Sort
+
 ## Data Structures:
 
 * LinkedList

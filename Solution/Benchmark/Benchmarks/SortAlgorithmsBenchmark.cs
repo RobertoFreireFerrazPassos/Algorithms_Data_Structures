@@ -6,12 +6,14 @@ namespace Benchmark.Benchmarks
     /*
         |                     Method |          Mean |         Error |        StdDev |
         |--------------------------- |--------------:|--------------:|--------------:|
-        |  SelectionSort_SimpleInput |      49.14 ns |      1.108 ns |      1.724 ns |
-        |      QuickSort_SimpleInput |     240.17 ns |      4.669 ns |      9.642 ns |
-        |     BubbleSort_SimpleInput |      14.24 ns |      0.414 ns |      0.607 ns |
-        | SelectionSort_ComplexInput | 641,336.67 ns | 10,388.028 ns | 11,962.869 ns |
-        |     QuickSort_ComplexInput |  58,155.76 ns |  1,162.092 ns |  1,774.637 ns |
-        |    BubbleSort_ComplexInput |   1,087.67 ns |     21.530 ns |     31.558 ns |
+        |  SelectionSort_SimpleInput |      49.22 ns |      1.006 ns |      0.892 ns |
+        |      QuickSort_SimpleInput |     235.73 ns |      4.762 ns |      8.214 ns |
+        |     BubbleSort_SimpleInput |      10.95 ns |      0.298 ns |      0.264 ns |
+        |     InsertSort_SimpleInput |      55.76 ns |      1.090 ns |      2.020 ns |
+        | SelectionSort_ComplexInput | 639,210.13 ns | 12,652.781 ns | 12,426.723 ns |
+        |     QuickSort_ComplexInput |  55,277.40 ns |  1,065.522 ns |    944.557 ns |
+        |    BubbleSort_ComplexInput |   1,023.18 ns |     20.321 ns |     22.586 ns |
+        |    InsertSort_ComplexInput | 646,313.76 ns | 12,848.726 ns | 13,194.695 ns |
     */
 
     public class SortAlgorithmsBenchmark
@@ -26,6 +28,9 @@ namespace Benchmark.Benchmarks
 
         [Benchmark]
         public int[] BubbleSort_SimpleInput() => BubbleSort.Sort(simpleInput);
+
+        [Benchmark]
+        public int[] InsertSort_SimpleInput() => InsertSort.Sort(simpleInput);
 
         private int[] complexInput = new int[] {
             10, 64, 80, 30, 70, 25, 25, 12, 22, 11, 25, 45, 70, 90, 25, 12, 43, 11, 34,
@@ -97,6 +102,9 @@ namespace Benchmark.Benchmarks
         public int[] QuickSort_ComplexInput() => QuickSort.Sort(complexInput);
 
         [Benchmark]
-        public int[] BubbleSort_ComplexInput() => BubbleSort.Sort(complexInput);        
+        public int[] BubbleSort_ComplexInput() => BubbleSort.Sort(complexInput);
+
+        [Benchmark]
+        public int[] InsertSort_ComplexInput() => InsertSort.Sort(complexInput);
     }
 }
