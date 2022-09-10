@@ -39,3 +39,5 @@ Algorithms + Data Structures in C#
 https://www.geeksforgeeks.org/sorting-algorithms/?ref=lbp
 
 https://big-o.io/algorithms/comparison/quicksort/
+
+Book Algorithms C#: Explains Algorithms with Beautiful Pictures Learn it Easy Better and Well
