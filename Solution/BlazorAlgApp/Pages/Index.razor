@@ -1,7 +1,7 @@
 ﻿@page "/"
 
 <div class="word-container">
-    @for (int i = 0; i < word.Length; i++)
+    @for (int i = 0; i <= word.Length; i++)
     {
         if (Arrows is not null)
         {
@@ -13,7 +13,10 @@
                 }
             }
         }
-        <span class="character">@word[i]</span>
+        if (i < word.Length)
+        {
+            <span class="character">@word[i]</span>
+        }
     }
 </div>
 <p>S = "ABC"</p>
@@ -41,6 +44,7 @@
         {'h', new Arrow() { Color = "red", Position = -1}},
         {'b', new Arrow() { Color = "blue", Position = -1}},
         {'e', new Arrow() { Color = "green", Position = -1}},
+        {'d', new Arrow() { Color = "yellow", Position = -1}},
     };
 
     private async Task RunAsync()
@@ -100,22 +104,35 @@
             await SetArrows(new Dictionary<char, int>{
                 { 'h', head },
                 { 'b', begin },
-                { 'e', end }
+                { 'e', end },
+                { 'd', d },
             });
             if (--map[s[end++]] >= 0) counter--;
+            await SetArrows(new Dictionary<char, int>{
+                { 'h', head },
+                { 'b', begin },
+                { 'e', end },
+                { 'd', d },
+            });
+            await SetValues(new Dictionary<string, string>
+            {
+                { "PartialResult", d == int.MaxValue ? "" : s.Substring(head, d) }
+            });
             while (counter == 0)
             {
                 if (end - begin < d) d = end - (head = begin);
                 await SetArrows(new Dictionary<char, int>{
                     { 'h', head },
                     { 'b', begin },
-                    { 'e', end }
+                    { 'e', end },
+                    { 'd', d },
                 });
                 if (++map[s[begin++]] > 0) counter++;
                 await SetArrows(new Dictionary<char, int>{
                     { 'h', head },
                     { 'b', begin },
-                    { 'e', end }
+                    { 'e', end },
+                    { 'd', d },
                 });
                 await SetValues(new Dictionary<string, string>
                 {
