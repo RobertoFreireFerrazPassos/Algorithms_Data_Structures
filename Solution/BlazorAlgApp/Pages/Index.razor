@@ -105,18 +105,17 @@
                 { 'h', head },
                 { 'b', begin },
                 { 'e', end },
-                { 'd', d },
             });
             if (--map[s[end++]] >= 0) counter--;
             await SetArrows(new Dictionary<char, int>{
                 { 'h', head },
                 { 'b', begin },
                 { 'e', end },
-                { 'd', d },
             });
             await SetValues(new Dictionary<string, string>
             {
-                { "PartialResult", d == int.MaxValue ? "" : s.Substring(head, d) }
+                { "PartialResult", d == int.MaxValue ? "" : s.Substring(head, d) },
+                { "d", d.ToString() },
             });
             while (counter == 0)
             {
@@ -125,18 +124,17 @@
                     { 'h', head },
                     { 'b', begin },
                     { 'e', end },
-                    { 'd', d },
                 });
                 if (++map[s[begin++]] > 0) counter++;
                 await SetArrows(new Dictionary<char, int>{
                     { 'h', head },
                     { 'b', begin },
                     { 'e', end },
-                    { 'd', d },
                 });
                 await SetValues(new Dictionary<string, string>
                 {
-                   { "PartialResult", d == int.MaxValue ? "" : s.Substring(head, d) }
+                   { "PartialResult", d == int.MaxValue ? "" : s.Substring(head, d) },
+                   { "d", d.ToString() },
                 });
             }
         }
