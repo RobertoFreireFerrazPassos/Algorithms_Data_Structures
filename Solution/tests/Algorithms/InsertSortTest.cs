@@ -1,5 +1,4 @@
 ﻿using Algorithms_Data_Structures.Algorithms.Sort;
-using System;
 using tests.Extension;
 using Xunit;
 
