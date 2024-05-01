@@ -16,8 +16,13 @@
         <span class="character">@word[i]</span>
     }
 </div>
-<p >@result</p>
+<p>S = "ABC"</p>
+<p>RESULT: @result</p>
 <button @onclick="(async() => await RunAsync())">Run</button>
+@foreach(var value in Values)
+{
+    <p>@value.Key : @value.Value</p>
+}
 
 @code {
     public class Arrow
@@ -30,6 +35,7 @@
     private string S = "ABC";
     private string result = ""; //Expected = "BANC";
     private string errorMessage = "";
+    private Dictionary<string, string> Values = new Dictionary<string, string>();
     private Dictionary<char, Arrow> Arrows = new Dictionary<char, Arrow>
     {
         {'h', new Arrow() { Color = "red", Position = -1}},
@@ -39,6 +45,8 @@
 
     private async Task RunAsync()
     {
+        result = string.Empty;
+        Values = new Dictionary<string, string>();
         result = await MinWindowAsync(word, S);
         StateHasChanged();
     }
@@ -54,6 +62,14 @@
         {
             SetArrow(arrow.Key, arrow.Value);
         }
+
+        StateHasChanged();
+        await Task.Delay(1000);
+    }
+
+    private async Task SetValues(Dictionary<string, string> values)
+    {
+        Values = values;
 
         StateHasChanged();
         await Task.Delay(1000);
@@ -100,6 +116,10 @@
                     { 'h', head },
                     { 'b', begin },
                     { 'e', end }
+                });
+                await SetValues(new Dictionary<string, string>
+                {
+                   { "PartialResult", d == int.MaxValue ? "" : s.Substring(head, d) }
                 });
             }
         }
