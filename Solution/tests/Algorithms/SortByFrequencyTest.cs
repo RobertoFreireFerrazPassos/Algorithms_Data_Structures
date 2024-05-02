@@ -18,5 +18,16 @@ namespace tests.Algorithms
 
             Assert.Equal(expectedOutput, result.CreateString());
         }
+
+        [Theory]
+        [InlineData("cccaaa", "aaaccc", "cccaaa")]
+        [InlineData("tree", "eert", "eetr")]
+        [InlineData("Aabb", "bbAa", "bbaA")]
+        public void SortString(string array, string expectedOutput, string expectedOutput2)
+        {
+            var result = SortStringByFrequency.Sort(array);
+
+            Assert.True(expectedOutput == result || expectedOutput2 == result);
+        }
     }
 }
