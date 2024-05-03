@@ -3,21 +3,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace Benchmark.Benchmarks
 {
-    /*
-        |                     Method |           Mean |         Error |        StdDev |
-        |--------------------------- |---------------:|--------------:|--------------:|
-        |  SelectionSort_SimpleInput |      39.495 ns |     0.2498 ns |     0.2086 ns |
-        |      QuickSort_SimpleInput |     164.930 ns |     1.3201 ns |     1.1702 ns |
-        |     BubbleSort_SimpleInput |       7.427 ns |     0.1796 ns |     0.1764 ns |
-        |    BubbleSort2_SimpleInput |      10.410 ns |     0.0473 ns |     0.0369 ns |
-        |     InsertSort_SimpleInput |      25.731 ns |     0.1496 ns |     0.1326 ns |
-        | SelectionSort_ComplexInput | 821,299.889 ns | 2,705.2452 ns | 2,530.4880 ns |
-        |     QuickSort_ComplexInput |  40,555.676 ns |   784.2532 ns |   770.2415 ns |
-        |    BubbleSort_ComplexInput |   1,060.604 ns |     7.9650 ns |     7.4504 ns |
-        |   BubbleSort2_ComplexInput |      10.511 ns |     0.0714 ns |     0.0668 ns |
-        |    InsertSort_ComplexInput | 423,621.579 ns | 1,494.1006 ns | 1,324.4813 ns |
-
-    
+    /*    
         |                     Method |           Mean |          Error |         StdDev |         Median |
         |--------------------------- |---------------:|---------------:|---------------:|---------------:|
         |  SelectionSort_SimpleInput |      39.366 ns |      0.1583 ns |      0.1236 ns |      39.354 ns |
