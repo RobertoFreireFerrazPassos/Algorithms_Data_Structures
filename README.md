@@ -1,6 +1,10 @@
 # Algorithms_Data_Structures
 Algorithms + Data Structures in C#
 
+## Big o notation 
+
+![image](https://github.com/RobertoFreireFerrazPassos/Algorithms_Data_Structures/assets/41349878/e029b880-6d13-4b36-be5e-850a31965834)
+
 ## Components:
 
 1 - Library to solve the Algorithms and Data Structures challenges
