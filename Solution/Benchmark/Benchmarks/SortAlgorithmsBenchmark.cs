@@ -4,17 +4,19 @@ using BenchmarkDotNet.Attributes;
 namespace Benchmark.Benchmarks
 {
     /*
-        |                     Method |          Mean |         Error |        StdDev |
-        |--------------------------- |--------------:|--------------:|--------------:|
-        |  SelectionSort_SimpleInput |      49.22 ns |      1.006 ns |      0.892 ns |
-        |      QuickSort_SimpleInput |     235.73 ns |      4.762 ns |      8.214 ns |
-        |     BubbleSort_SimpleInput |      10.95 ns |      0.298 ns |      0.264 ns |
-        |     InsertSort_SimpleInput |      55.76 ns |      1.090 ns |      2.020 ns |
-        | SelectionSort_ComplexInput | 639,210.13 ns | 12,652.781 ns | 12,426.723 ns |
-        |     QuickSort_ComplexInput |  55,277.40 ns |  1,065.522 ns |    944.557 ns |
-        |    BubbleSort_ComplexInput |   1,023.18 ns |     20.321 ns |     22.586 ns |
-        |    InsertSort_ComplexInput | 646,313.76 ns | 12,848.726 ns | 13,194.695 ns |
-    */
+        |                     Method |           Mean |         Error |        StdDev |
+        |--------------------------- |---------------:|--------------:|--------------:|
+        |  SelectionSort_SimpleInput |      39.495 ns |     0.2498 ns |     0.2086 ns |
+        |      QuickSort_SimpleInput |     164.930 ns |     1.3201 ns |     1.1702 ns |
+        |     BubbleSort_SimpleInput |       7.427 ns |     0.1796 ns |     0.1764 ns |
+        |    BubbleSort2_SimpleInput |      10.410 ns |     0.0473 ns |     0.0369 ns |
+        |     InsertSort_SimpleInput |      25.731 ns |     0.1496 ns |     0.1326 ns |
+        | SelectionSort_ComplexInput | 821,299.889 ns | 2,705.2452 ns | 2,530.4880 ns |
+        |     QuickSort_ComplexInput |  40,555.676 ns |   784.2532 ns |   770.2415 ns |
+        |    BubbleSort_ComplexInput |   1,060.604 ns |     7.9650 ns |     7.4504 ns |
+        |   BubbleSort2_ComplexInput |      10.511 ns |     0.0714 ns |     0.0668 ns |
+        |    InsertSort_ComplexInput | 423,621.579 ns | 1,494.1006 ns | 1,324.4813 ns |
+        */
 
     public class SortAlgorithmsBenchmark
     {
@@ -28,6 +30,9 @@ namespace Benchmark.Benchmarks
 
         [Benchmark]
         public int[] BubbleSort_SimpleInput() => BubbleSort.Sort(simpleInput);
+
+        [Benchmark]
+        public int[] BubbleSort2_SimpleInput() => BubbleSort.Sort2(simpleInput);
 
         [Benchmark]
         public int[] InsertSort_SimpleInput() => InsertSort.Sort(simpleInput);
@@ -103,6 +108,9 @@ namespace Benchmark.Benchmarks
 
         [Benchmark]
         public int[] BubbleSort_ComplexInput() => BubbleSort.Sort(complexInput);
+
+        [Benchmark]
+        public int[] BubbleSort2_ComplexInput() => BubbleSort.Sort2(simpleInput);
 
         [Benchmark]
         public int[] InsertSort_ComplexInput() => InsertSort.Sort(complexInput);

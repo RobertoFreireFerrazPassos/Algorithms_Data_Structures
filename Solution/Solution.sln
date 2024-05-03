@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleExercises", "Console
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blazor", "blazor", "{6DE69C7B-11F3-4353-9276-40612CB421B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAlgApp", "BlazorAlgApp\BlazorAlgApp.csproj", "{B5610AA5-2374-49CA-8284-1AE5D6CCC32A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAlgApp", "BlazorAlgApp\BlazorAlgApp.csproj", "{B5610AA5-2374-49CA-8284-1AE5D6CCC32A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
