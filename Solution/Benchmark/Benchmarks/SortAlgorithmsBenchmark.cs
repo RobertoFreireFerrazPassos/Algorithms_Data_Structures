@@ -16,6 +16,20 @@ namespace Benchmark.Benchmarks
         |    BubbleSort_ComplexInput |   1,060.604 ns |     7.9650 ns |     7.4504 ns |
         |   BubbleSort2_ComplexInput |      10.511 ns |     0.0714 ns |     0.0668 ns |
         |    InsertSort_ComplexInput | 423,621.579 ns | 1,494.1006 ns | 1,324.4813 ns |
+
+    
+        |                     Method |           Mean |          Error |         StdDev |         Median |
+        |--------------------------- |---------------:|---------------:|---------------:|---------------:|
+        |  SelectionSort_SimpleInput |      39.366 ns |      0.1583 ns |      0.1236 ns |      39.354 ns |
+        |      QuickSort_SimpleInput |     163.247 ns |      1.2775 ns |      1.1950 ns |     163.166 ns |
+        |     BubbleSort_SimpleInput |       8.400 ns |      0.0774 ns |      0.0686 ns |       8.395 ns |
+        |    BubbleSort2_SimpleInput |      10.560 ns |      0.1807 ns |      0.1690 ns |      10.537 ns |
+        |     InsertSort_SimpleInput |      25.665 ns |      0.0925 ns |      0.0820 ns |      25.673 ns |
+        | SelectionSort_ComplexInput | 822,468.415 ns |  4,380.6356 ns |  3,883.3194 ns | 822,130.957 ns |
+        |     QuickSort_ComplexInput |  39,838.940 ns |    215.2769 ns |    190.8374 ns |  39,786.639 ns |
+        |    BubbleSort_ComplexInput |   1,407.631 ns |      8.1594 ns |      7.6323 ns |   1,406.279 ns |
+        |   BubbleSort2_ComplexInput |   1,757.289 ns |      6.3169 ns |      5.9088 ns |   1,757.017 ns |
+        |    InsertSort_ComplexInput | 483,116.078 ns | 23,026.7251 ns | 64,947.2867 ns | 459,855.420 ns |
         */
 
     public class SortAlgorithmsBenchmark
