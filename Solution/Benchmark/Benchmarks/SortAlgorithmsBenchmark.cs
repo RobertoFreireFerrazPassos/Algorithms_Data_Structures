@@ -110,7 +110,7 @@ namespace Benchmark.Benchmarks
         public int[] BubbleSort_ComplexInput() => BubbleSort.Sort(complexInput);
 
         [Benchmark]
-        public int[] BubbleSort2_ComplexInput() => BubbleSort.Sort2(simpleInput);
+        public int[] BubbleSort2_ComplexInput() => BubbleSort.Sort2(complexInput);
 
         [Benchmark]
         public int[] InsertSort_ComplexInput() => InsertSort.Sort(complexInput);
