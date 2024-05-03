@@ -9,6 +9,8 @@ Algorithms + Data Structures in C#
 
 3 - Xunit to test each challenge
 
+4 - Interactive Visualization Tool for Algorithm Execution in a Blazor Web Application
+
 ## Algorithms:
 
 * String reverse
