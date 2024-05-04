@@ -8,7 +8,7 @@ namespace Benchmark
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<SortAlgorithmsBenchmark>();
+            var summary = BenchmarkRunner.Run<BigONotationBenchmark>();
         }
     }
 }
