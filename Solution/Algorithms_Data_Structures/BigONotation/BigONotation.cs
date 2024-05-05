@@ -30,10 +30,10 @@
         // O(log n) time
         public static int BinarySearchMain(int[] sortedArray, int value)
         {
-            return BinarySearch(sortedArray, value, 0, sortedArray.Length -1);
+            return BinarySearchRecursive(sortedArray, value, 0, sortedArray.Length -1);
         }
 
-        public static int BinarySearch(int[] sortedArray, int value, int begin, int end)
+        private static int BinarySearchRecursive(int[] sortedArray, int value, int begin, int end)
         {
             int mid = (end - begin)/2 + begin;
 
@@ -44,17 +44,17 @@
 
             if (value < sortedArray[mid])
             {
-                return BinarySearch(sortedArray, value, begin, mid - 1);
+                return BinarySearchRecursive(sortedArray, value, begin, mid - 1);
             }
             else if (value > sortedArray[mid])
             {
-                return BinarySearch(sortedArray, value, mid + 1, end);
+                return BinarySearchRecursive(sortedArray, value, mid + 1, end);
             }
             else
             {
                 if (mid > 0 && value == sortedArray[mid-1])
                 {
-                    return BinarySearch(sortedArray, value, mid - 1, mid - 1);
+                    return BinarySearchRecursive(sortedArray, value, mid - 1, mid - 1);
                 }
                 return mid;
             }
