@@ -3,10 +3,6 @@ Algorithms + Data Structures in C#
 
 ## TODO:
 
-𝟭. 𝗧𝘄𝗼 𝗣𝗼𝗶𝗻𝘁𝗲𝗿𝘀:
- - https://www.pluralsight.com/resources/blog/guides/algorithm-templates-two-pointers-part-1
- - https://www.pluralsight.com/resources/blog/guides/algorithm-templates-two-pointers-part-2
-
 𝟮. 𝗜𝗻𝘁𝗲𝗿𝘃𝗮𝗹𝘀:
  - https://leetcode.com/discuss/general-discussion/794725/General-Pattern-for-greedy-approach-for-Interval-based-problems
  - https://medium.com/@timpark0807/leetcode-is-easy-the-interval-pattern-d68a7c1c841
