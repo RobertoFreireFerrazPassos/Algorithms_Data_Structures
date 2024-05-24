@@ -28,12 +28,6 @@ Algorithms + Data Structures in C#
  - https://leetcode.com/problems/binary-tree-postorder-traversal/solutions/45551/Preorder-Inorder-and-Postorder-Iteratively-Summarization/
  - https://leetcode.com/problems/binary-tree-inorder-traversal/description/
 
-𝟴. 𝗦𝗹𝗶𝗱𝗶𝗻𝗴 𝗪𝗶𝗻𝗱𝗼𝘄:
- - https://www.pluralsight.com/resources/blog/guides/algorithm-templates-two-pointers-part-3
- - https://medium.com/leetcode-patterns/leetcode-pattern-2-sliding-windows-for-strings-e19af105316b
- - https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems/
- - https://leetcode.com/problems/find-all-anagrams-in-a-string/solutions/92007/Sliding-Window-algorithm-template-to-solve-all-the-Leetcode-substring-search-problem./
-
 𝟵. 𝗕𝗮𝗰𝗸𝘁𝗿𝗮𝗰𝗸𝗶𝗻𝗴:
  - https://leetcode.com/problems/permutations/solutions/18284/Backtrack-Summary:-General-Solution-for-10-Questionsh/
  - https://medium.com/leetcode-patterns/leetcode-pattern-3-backtracking-5d9e5a03dc26
