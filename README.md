@@ -2,10 +2,6 @@
 Algorithms + Data Structures in C#
 
 ## TODO:
-
-𝟮. 𝗜𝗻𝘁𝗲𝗿𝘃𝗮𝗹𝘀:
- - https://leetcode.com/discuss/general-discussion/794725/General-Pattern-for-greedy-approach-for-Interval-based-problems
- - https://medium.com/@timpark0807/leetcode-is-easy-the-interval-pattern-d68a7c1c841
  
 𝟯. 𝗔𝗿𝗿𝗮𝘆:
  - https://leetcode.com/problems/reverse-pairs/solutions/97268/General-principles-behind-problems-similar-to-%22Reverse-Pairs%22/
