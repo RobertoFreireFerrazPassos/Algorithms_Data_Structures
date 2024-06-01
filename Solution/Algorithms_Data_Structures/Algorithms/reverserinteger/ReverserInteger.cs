@@ -26,10 +26,10 @@ public class ReverserInteger
     {
         //1
         var result = string.Empty;
-        var enable_print = N % 10 != 0;
+        var enable_print = false;
         while (N > 0)
         {
-            if (N % 10 != 0)
+            if (enable_print == false && N % 10 != 0)
             {
                 enable_print = true;
             }
