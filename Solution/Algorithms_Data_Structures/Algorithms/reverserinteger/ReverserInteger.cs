@@ -5,18 +5,17 @@ public class ReverserInteger
     public static string Reverse(int N)
     {
         var result = string.Empty;
-        int remaining = N;
-        var isZero= remaining % 10 == 0;
-        while (remaining != 0) {
+        var isZero= N % 10 == 0;
+        while (N != 0) {
             if (isZero)
             {
-                remaining= remaining/10;
-                isZero = remaining % 10 == 0;
+                N = N / 10;
+                isZero = N % 10 == 0;
             }
             else
             {
-                result += remaining % 10;
-                remaining = remaining / 10;
+                result += N % 10;
+                N = N / 10;
             }
         }
         return result;
